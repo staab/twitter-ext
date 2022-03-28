@@ -19,7 +19,7 @@
         $('[aria-label="Who to follow"]').forEach(e => e.remove())
         $('[aria-label="Set as not interested"]').forEach(e => e.closest('[role="article"]').remove())
         $('[data-testid="placementTracking"] span')
-            .filter(x => x.innerText === 'Promoted')
+            .filter(x => x.innerText.startsWith('Promoted'))
             .map(x => x.closest('[data-testid="placementTracking"]').remove())
     }, 1000)
 })();
