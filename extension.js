@@ -12,11 +12,12 @@
 (function() {
     'use strict';
 
-    const $ = s => document.querySelectorAll(s)
+    const $ = s => [].slice.apply(document.querySelectorAll(s))
 
     setInterval(() => {
         $('[aria-label="Timeline: Trending now"]').forEach(e => e.remove())
         $('[aria-label="Who to follow"]').forEach(e => e.remove())
         $('[aria-label="Set as not interested"]').forEach(e => e.closest('[role="article"]').remove())
+        $('[data-testid="placementTracking"]').forEach(x => x.remove())
     }, 1000)
 })();
